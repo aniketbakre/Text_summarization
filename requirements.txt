@@ -1,0 +1,26 @@
+# General libraries
+pip
+Flask
+transformers
+torch
+spacy
+scikit-learn
+gunicorn
+flask-cors
+
+# For deployment
+werkzeug==2.1.2
+
+
+
+
+## Requirements Explanation:
+# pip: It is package installer for python
+# Flask: A lightweight WSGI web application framework in Python.
+# transformers: A library by Hugging Face that provides pre-trained models for natural language processing tasks.
+# torch: The PyTorch deep learning library, which is used by the transformers library.
+# spacy: An advanced NLP library in Python.
+# scikit-learn: A library for machine learning, including algorithms for keyword extraction.
+# gunicorn: A WSGI HTTP server for running Flask applications.
+# flask-cors: A Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible.
+# werkzeug: A WSGI utility library for Python that provides various utilities for web applications.

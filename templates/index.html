@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .window {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 45%;
+            height: 300px;
+            overflow: auto;
+        }
+        .input-window {
+            background-color: #f9f9f9;
+        }
+        .output-window {
+            background-color: #e9e9e9;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Summarization App</h1>
+    <div class="container">
+        <div class="window input-window">
+            <textarea id="inputText" placeholder="Enter text here..." style="width: 100%; height: 100%;"></textarea>
+        </div>
+        <div class="window output-window" id="outputText">
+            <!-- Summarized text will appear here -->
+        </div>
+    </div>
+    <button onclick="summarizeText()">Summarize</button>
+
+    <script>
+        async function summarizeText() {
+            const inputText = document.getElementById('inputText').value;
+            const response = await fetch('/summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            });
+            const data = await response.json();
+            document.getElementById('outputText').innerText = data;
+        }
+    </script>
+</body>
+</html>
