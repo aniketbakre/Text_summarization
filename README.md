@@ -35,7 +35,7 @@ To get started with the Text Summarization Project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/text-summarization-project.git
+    [git clone https://github.com/yourusername/text-summarization-project.git](https://github.com/aniketbakre/Text_summarization.git)
     cd text-summarization-project
     ```
 
